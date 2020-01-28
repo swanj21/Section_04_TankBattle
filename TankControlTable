@@ -1,0 +1,8 @@
+Intention    - Manual control             - Fly by wire control                     - Actuator(s)
+
+Forwards     - Both triggers @ same time  - Left stick up / W key                   - Both tracks forward @ same speed
+Backwards    - Both bumpers @ same time   - Left stick back / S key                 - Both tracks backwards @ same speed
+Turn tank    - One bumper/trigger         - Left stick left or right / A or D key   - One track forward, one back @ same speed
+Turn turret  - N/A                        - Right analog stick / Mouse movement     - No track movement, only top moves to desired location
+Shoot        - A button                   - A button / Left click                   - Cannon fires, turret shakes, tracks move backward slightly
+Interact     - B button                   - B button / Right click                  - No movement
