@@ -31,6 +31,9 @@ public:
 
     void aimAt(FVector location);
 
+    UFUNCTION(BlueprintCallable, Category = Firing)
+        void fire();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -39,5 +42,5 @@ protected:
 
 private:
     UPROPERTY(EditAnywhere, Category=Firing)
-        float launchSpeed = 100000; /// TODO: Find a sensible default speed, then leave it to the designer(me) to tweak it.
+        float launchSpeed = 4000;
 };
