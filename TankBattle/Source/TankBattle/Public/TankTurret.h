@@ -19,5 +19,5 @@ public:
 
 private:
     UPROPERTY(EditAnywhere, Category = Setup)
-        float maxDegreesPerSecond = 5;
+        float maxDegreesPerSecond = 25;
 };
