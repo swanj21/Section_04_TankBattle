@@ -26,11 +26,11 @@ public:
     ATank* getControlledTank() const;
 
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
         float crosshairXLocation = .5f;
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
         float crosshairYLocation = .3333f;
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
         float lineTraceRange = 1000000; /// 10km, 1 million cm
 
     bool getSightRayHitLocation(FVector &hitLocation);
