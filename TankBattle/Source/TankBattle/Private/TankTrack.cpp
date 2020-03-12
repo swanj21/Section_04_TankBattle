@@ -4,9 +4,6 @@
 
 void UTankTrack::setThrottle(float throttle) {
     // TODO: Clamp actual throttle value so player can't add more than we desire
-    auto name = GetName();
-    UE_LOG(LogTemp, Warning, TEXT("%s throttle %f"), *name, throttle);
-
     /// Apply the force forward using the calculated throttle and max driving force
     auto forceApplied = GetForwardVector() * throttle * trackMaxDrivingForce;
     

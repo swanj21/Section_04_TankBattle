@@ -3,3 +3,6 @@
 
 #include "TankMovementComponent.h"
 
+void UTankMovementComponent::intendMoveForward(float intention) {
+    UE_LOG(LogTemp, Warning, TEXT("Intend move forward, intention is %f"), intention);
+}

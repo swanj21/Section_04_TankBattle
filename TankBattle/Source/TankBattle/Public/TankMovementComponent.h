@@ -7,11 +7,14 @@
 #include "TankMovementComponent.generated.h"
 
 /**
- * 
+ * Movement component for the tank
  */
 UCLASS()
 class TANKBATTLE_API UTankMovementComponent : public UNavMovementComponent
 {
 	GENERATED_BODY()
 	
+public:
+    UFUNCTION(BlueprintCallable, Category = Movement)
+        void intendMoveForward(float intention);
 };
