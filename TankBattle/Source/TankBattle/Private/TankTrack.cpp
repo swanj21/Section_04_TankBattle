@@ -3,7 +3,6 @@
 #include "TankTrack.h"
 
 void UTankTrack::setThrottle(float throttle) {
-    // TODO: Clamp actual throttle value so player can't add more than we desire
     /// Apply the force forward using the calculated throttle and max driving force
     auto forceApplied = GetForwardVector() * throttle * trackMaxDrivingForce;
     
