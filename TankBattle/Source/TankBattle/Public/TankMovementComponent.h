@@ -22,6 +22,8 @@ public:
         void initialize(UTankTrack* leftTrack, UTankTrack* rightTrack);
     UFUNCTION(BlueprintCallable, Category = Movement)
         void intendMoveForward(float intention);
+    UFUNCTION(BlueprintCallable, Category = Movement)
+        void intendTurnRight(float intention);
 private:
     UTankTrack* leftTrack = nullptr;
     UTankTrack* rightTrack = nullptr;

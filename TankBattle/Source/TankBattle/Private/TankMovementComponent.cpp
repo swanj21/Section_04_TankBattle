@@ -4,14 +4,22 @@
 #include "TankMovementComponent.h"
 
 void UTankMovementComponent::initialize(UTankTrack* leftTrack, UTankTrack* rightTrack) {
-    if (!leftTrack || !rightTrack) {
-        return;
-    }
     this->leftTrack = leftTrack;
     this->rightTrack = rightTrack;
 }
 void UTankMovementComponent::intendMoveForward(float intention) {
+    if (!leftTrack || !rightTrack) {
+        return;
+    }
     leftTrack->setThrottle(intention);
     rightTrack->setThrottle(intention);
     /// TODO: Prevent double-speed due to dual control use(trigger and stick doubles speed)
+}
+
+void UTankMovementComponent::intendTurnRight(float intention) {
+    if (!leftTrack || !rightTrack) {
+        return;
+    }
+    leftTrack->setThrottle(intention);
+    rightTrack->setThrottle(-intention);
 }
