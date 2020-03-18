@@ -28,6 +28,9 @@ void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool
     auto tankForwardDirection = GetOwner()->GetActorForwardVector().GetSafeNormal();
     auto aiForwardIntention = MoveVelocity.GetSafeNormal(); /// Unit vector for where the tank wants to move forward
 
-    /// Use the FVector::DotProduct() and feed the result into IntendMoveForward() to get it to move
+    /// The dot product is using the cosine function to determine how much it will want to move forward
     intendMoveForward(FVector::DotProduct(tankForwardDirection, aiForwardIntention));
+
+    /// The cross product is using the sin function to determine how much it will want to turn
+    intendTurnRight(FVector::CrossProduct(tankForwardDirection, aiForwardIntention).Z);
 }
