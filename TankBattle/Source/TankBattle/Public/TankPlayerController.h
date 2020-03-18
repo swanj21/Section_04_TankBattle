@@ -23,7 +23,10 @@ public:
     void Tick(float deltaTime) override;
 
     void aimTowardsCrosshair();
-    ATank* getControlledTank() const;
+
+protected:
+    UFUNCTION(BlueprintCallable, Category = "Setup")
+        ATank* getControlledTank() const;
 
 private:
     UPROPERTY(EditDefaultsOnly)
