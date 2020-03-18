@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Gerald Swan Jr
 
 #include "TankTrack.h"
 #include "TankMovementComponent.h"
@@ -13,7 +13,6 @@ void UTankMovementComponent::intendMoveForward(float intention) {
     }
     leftTrack->setThrottle(intention);
     rightTrack->setThrottle(intention);
-    /// TODO: Prevent double-speed due to dual control use(trigger and stick doubles speed)
 }
 
 void UTankMovementComponent::intendTurnRight(float intention) {

@@ -10,7 +10,7 @@
 class UTankTrack;
 
 /**
- * Responsible for driving the tank tracks
+ * Responsible for driving the tank using the tracks
  */
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class TANKBATTLE_API UTankMovementComponent : public UNavMovementComponent
@@ -18,16 +18,17 @@ class TANKBATTLE_API UTankMovementComponent : public UNavMovementComponent
 	GENERATED_BODY()
 	
 public:
-    UFUNCTION(BlueprintCallable, Category = Setup)
+    UFUNCTION(BlueprintCallable, Category = "Setup")
         void initialize(UTankTrack* leftTrack, UTankTrack* rightTrack);
-    UFUNCTION(BlueprintCallable, Category = Movement)
+    UFUNCTION(BlueprintCallable, Category = "Movement")
         void intendMoveForward(float intention);
-    UFUNCTION(BlueprintCallable, Category = Movement)
+    UFUNCTION(BlueprintCallable, Category = "Movement")
         void intendTurnRight(float intention);
 
-    /// TODO: Check best protection
-    void RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) override; 
 private:
     UTankTrack* leftTrack = nullptr;
     UTankTrack* rightTrack = nullptr;
+
+    // Called from the pathfinding logic by the AI controllers
+    void RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) override;
 };
