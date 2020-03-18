@@ -29,4 +29,7 @@ private:
 
     ATank* playerTank = nullptr;
     ATank* controlledTank = nullptr;
+
+    /// How close the AI tank can get to the actor
+    float acceptanceRadius = 3000;
 };

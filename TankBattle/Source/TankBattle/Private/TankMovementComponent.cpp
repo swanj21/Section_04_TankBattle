@@ -23,3 +23,11 @@ void UTankMovementComponent::intendTurnRight(float intention) {
     leftTrack->setThrottle(intention);
     rightTrack->setThrottle(-intention);
 }
+
+void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) {
+    auto tankForwardDirection = GetOwner()->GetActorForwardVector().GetSafeNormal();
+    auto aiForwardIntention = MoveVelocity.GetSafeNormal(); /// Unit vector for where the tank wants to move forward
+
+    /// Use the FVector::DotProduct() and feed the result into IntendMoveForward() to get it to move
+    intendMoveForward(FVector::DotProduct(tankForwardDirection, aiForwardIntention));
+}
